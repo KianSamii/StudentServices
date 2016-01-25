@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="11" time="0.924299">
+<testcase classname="Students" name="adding student to database returns 201 CREATED response" time="0.422817">
+<system-out><![CDATA[Given I create a student with parameters:...................................passed
+When I add the student......................................................passed
+Then the status code should be 201..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Students" name="adding two students with the same ID should throw an error" time="0.043828">
+<system-out><![CDATA[Given I create a student with parameters:...................................passed
+When I add the student......................................................passed
+And I add the student.......................................................passed
+Then the status code should be 400..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Students" name="Getting a student should include all parameters that were POSTed" time="0.072929">
+<system-out><![CDATA[Given I create a student with parameters:...................................passed
+When I add the student......................................................passed
+And I get the student.......................................................passed
+Then the status code should be 200..........................................passed
+And the response matches the student........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Students" name="Adding a student should increase the student number." time="0.081944">
+<system-out><![CDATA[Given I create a student with parameters:...................................passed
+When I add the student......................................................passed
+And I get the student.......................................................passed
+And I store the last response as temp.......................................passed
+And I create a student with parameters:.....................................passed
+And I add the student.......................................................passed
+And I get the student.......................................................passed
+Then the status code should be 200..........................................passed
+And the last response should have a number one higher than the one in temp..passed
+And the student number should be seven characters long......................passed
+]]></system-out>
+</testcase>
+<testcase classname="Students" name="Adding an enrolled student with fewer than three classes throws an error" time="0.018395">
+<system-out><![CDATA[Given I create a student with parameters:...................................passed
+When I add the student......................................................passed
+Then the status code should be 400..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Students" name="Adding an unenrolled student with any classes throws an error" time="0.021869">
+<system-out><![CDATA[Given I create a student with parameters:...................................passed
+When I add the student......................................................passed
+Then the status code should be 400..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Students" name="Updating a student should update the database" time="0.077456">
+<system-out><![CDATA[Given I create a student with parameters:...................................passed
+And I add the student.......................................................passed
+And I update the student with parameters:...................................passed
+And I get the student.......................................................passed
+And the response does not match the student.................................passed
+And I update the student on the server......................................passed
+And I get the student.......................................................passed
+Then the response matches the student.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Students" name="Updating the student number does not change the number in the database" time="0.071752">
+<system-out><![CDATA[Given I create a student with parameters:...................................passed
+And I add the student.......................................................passed
+And I update the student with parameters:...................................passed
+And I get the student.......................................................passed
+And I store the last response as temp.......................................passed
+And I update the student on the server......................................passed
+And I get the student.......................................................passed
+And the last response should have a number the same as the one in temp......passed
+]]></system-out>
+</testcase>
+<testcase classname="Students" name="Deleting the student removes the row from the database" time="0.059075">
+<system-out><![CDATA[Given I create a student with parameters:...................................passed
+And I add the student.......................................................passed
+And I get the student.......................................................passed
+And the response matches the student........................................passed
+And I delete the student....................................................passed
+And the status code should be 204...........................................passed
+And I get the student.......................................................passed
+And the status code should be 404...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Students" name="Not supplying the name does not allow you to add a student" time="0.025452">
+<system-out><![CDATA[Given I create a student with parameters:...................................passed
+And I add the student.......................................................passed
+And the status code should be 400...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Students" name="Supplying a future date does not allow you to add a student" time="0.028782">
+<system-out><![CDATA[Given I create a student with parameters:...................................passed
+And I add the student.......................................................passed
+]]></system-out>
+</testcase>
+</testsuite>

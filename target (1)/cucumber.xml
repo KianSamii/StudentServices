@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="12" tests="12" time="0">
+<testcase classname="Students" name="adding student to database returns 201 CREATED response" time="0">
+<skipped><![CDATA[Given I create a student with parameters:...................................undefined
+When I add the student......................................................undefined
+Then the status code should be 201..........................................undefined
+]]></skipped>
+</testcase>
+<testcase classname="Students" name="adding two students with the same ID should throw an error" time="0">
+<skipped><![CDATA[Given I create a student with parameters:...................................undefined
+When I add the student......................................................undefined
+And I add the student expecting an error....................................undefined
+Then the status code should be 400..........................................undefined
+]]></skipped>
+</testcase>
+<testcase classname="Students" name="Getting a student should include all parameters that were POSTed" time="0">
+<skipped><![CDATA[Given I create a student with parameters:...................................undefined
+When I add the student......................................................undefined
+And I get the student.......................................................undefined
+Then the status code should be 200..........................................undefined
+And the response matches the student........................................undefined
+]]></skipped>
+</testcase>
+<testcase classname="Students" name="Adding a student should increase the student number." time="0">
+<skipped><![CDATA[Given I create a student with parameters:...................................undefined
+When I add the student......................................................undefined
+And I get the student.......................................................undefined
+And I store the last response as temp.......................................undefined
+And I create a student with parameters:.....................................undefined
+And I add the student.......................................................undefined
+And I get the student.......................................................undefined
+Then the status code should be 200..........................................undefined
+And the last response should have a number one higher than the one in temp..undefined
+And the student number should be seven characters long......................undefined
+]]></skipped>
+</testcase>
+<testcase classname="Students" name="Adding an enrolled student with fewer than three classes throws an error" time="0">
+<skipped><![CDATA[Given I create a student with parameters:...................................undefined
+When I add the student expecting an error...................................undefined
+Then the status code should be 400..........................................undefined
+]]></skipped>
+</testcase>
+<testcase classname="Students" name="Adding an unenrolled student with any classes throws an error" time="0">
+<skipped><![CDATA[Given I create a student with parameters:...................................undefined
+When I add the student expecting an error...................................undefined
+Then the status code should be 400..........................................undefined
+]]></skipped>
+</testcase>
+<testcase classname="Students" name="Updating a student should update the database" time="0">
+<skipped><![CDATA[Given I create a student with parameters:...................................undefined
+And I add the student.......................................................undefined
+And I update the student with parameters:...................................undefined
+And I get the student.......................................................undefined
+And the response does not match the student.................................undefined
+And I update the student on the server......................................undefined
+And I get the student.......................................................undefined
+Then the response matches the student.......................................undefined
+]]></skipped>
+</testcase>
+<testcase classname="Students" name="Updating the student number does not change the number in the database" time="0">
+<skipped><![CDATA[Given I create a student with parameters:...................................undefined
+And I add the student.......................................................undefined
+And I update the student with parameters:...................................undefined
+And I get the student.......................................................undefined
+And I store the last response as temp.......................................undefined
+And I update the student on the server......................................undefined
+And I get the student.......................................................undefined
+And the last response should have a number the same as the one in temp......undefined
+]]></skipped>
+</testcase>
+<testcase classname="Students" name="Deleting the student removes the row from the database" time="0">
+<skipped><![CDATA[Given I create a student with parameters:...................................undefined
+And I add the student.......................................................undefined
+And I get the student.......................................................undefined
+And the response matches the student........................................undefined
+And I delete the student....................................................undefined
+And the status code should be 204...........................................undefined
+And I get the student.......................................................undefined
+And the status code should be 404...........................................undefined
+]]></skipped>
+</testcase>
+<testcase classname="Students" name="Not supplying the name does not allow you to add a student" time="0">
+<skipped><![CDATA[Given I create a student with parameters:...................................undefined
+And I add the student expecting an error....................................undefined
+And the status code should be 400...........................................undefined
+]]></skipped>
+</testcase>
+<testcase classname="Students" name="Supplying a future date does not allow you to add a student" time="0">
+<skipped><![CDATA[Given I create a student with parameters:...................................undefined
+And I add the student expecting an error....................................undefined
+And the status code should be 400...........................................undefined
+]]></skipped>
+</testcase>
+<testcase classname="Students" name="Supplying an invalid uuid will not allow you to add a student" time="0">
+<skipped><![CDATA[Given I create a student with parameters:...................................undefined
+And I add the student expecting an error....................................undefined
+And the status code should be 400...........................................undefined
+]]></skipped>
+</testcase>
+</testsuite>

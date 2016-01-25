@@ -1,0 +1,1766 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "adding student to database returns 201 CREATED response",
+        "description": "",
+        "id": "students;adding-student-to-database-returns-201-created-response",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 122725271,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I create a student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.a_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "enrolled",
+                  "true"
+                ],
+                "line": 5
+              },
+              {
+                "cells": [
+                  "number",
+                  "1"
+                ],
+                "line": 6
+              },
+              {
+                "cells": [
+                  "classes",
+                  "math, history, science"
+                ],
+                "line": 7
+              },
+              {
+                "cells": [
+                  "name",
+                  "Andrew Samii"
+                ],
+                "line": 8
+              },
+              {
+                "cells": [
+                  "dob",
+                  "07/11/1989"
+                ],
+                "line": 9
+              },
+              {
+                "cells": [
+                  "addressLine1",
+                  "1 Street Pl."
+                ],
+                "line": 10
+              },
+              {
+                "cells": [
+                  "city",
+                  "San Diego"
+                ],
+                "line": 11
+              },
+              {
+                "cells": [
+                  "state",
+                  "CA"
+                ],
+                "line": 12
+              },
+              {
+                "cells": [
+                  "zip",
+                  "92131"
+                ],
+                "line": 13
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "5551234567"
+                ],
+                "line": 14
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 298868229,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1223214,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the status code should be 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 26
+                }
+              ],
+              "location": "StudentStepDefs.the_status_code_should_be(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 18,
+        "name": "adding two students with the same ID should throw an error",
+        "description": "",
+        "id": "students;adding-two-students-with-the-same-id-should-throw-an-error",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 780498,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I create a student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.a_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "enrolled",
+                  "true"
+                ],
+                "line": 20
+              },
+              {
+                "cells": [
+                  "number",
+                  "1"
+                ],
+                "line": 21
+              },
+              {
+                "cells": [
+                  "classes",
+                  "math, history, science"
+                ],
+                "line": 22
+              },
+              {
+                "cells": [
+                  "name",
+                  "Andrew Samii"
+                ],
+                "line": 23
+              },
+              {
+                "cells": [
+                  "dob",
+                  "07/11/1989"
+                ],
+                "line": 24
+              },
+              {
+                "cells": [
+                  "addressLine1",
+                  "1 Street Pl."
+                ],
+                "line": 25
+              },
+              {
+                "cells": [
+                  "city",
+                  "San Diego"
+                ],
+                "line": 26
+              },
+              {
+                "cells": [
+                  "state",
+                  "CA"
+                ],
+                "line": 27
+              },
+              {
+                "cells": [
+                  "zip",
+                  "92131"
+                ],
+                "line": 28
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "5551234567"
+                ],
+                "line": 29
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 22194303,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 20649068,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 203987,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "the status code should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 26
+                }
+              ],
+              "location": "StudentStepDefs.the_status_code_should_be(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 34,
+        "name": "Getting a student should include all parameters that were POSTed",
+        "description": "",
+        "id": "students;getting-a-student-should-include-all-parameters-that-were-posted",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 786737,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "I create a student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.a_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "enrolled",
+                  "true"
+                ],
+                "line": 36
+              },
+              {
+                "cells": [
+                  "number",
+                  "1"
+                ],
+                "line": 37
+              },
+              {
+                "cells": [
+                  "classes",
+                  "math, history, science"
+                ],
+                "line": 38
+              },
+              {
+                "cells": [
+                  "name",
+                  "Andrew Samii"
+                ],
+                "line": 39
+              },
+              {
+                "cells": [
+                  "dob",
+                  "07/11/1989"
+                ],
+                "line": 40
+              },
+              {
+                "cells": [
+                  "addressLine1",
+                  "1 Street Pl."
+                ],
+                "line": 41
+              },
+              {
+                "cells": [
+                  "city",
+                  "San Diego"
+                ],
+                "line": 42
+              },
+              {
+                "cells": [
+                  "state",
+                  "CA"
+                ],
+                "line": 43
+              },
+              {
+                "cells": [
+                  "zip",
+                  "92131"
+                ],
+                "line": 44
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "5551234567"
+                ],
+                "line": 45
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 25190800,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 46678890,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "I get the student",
+            "match": {
+              "location": "StudentStepDefs.I_get_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 72856,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "the status code should be 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 26
+                }
+              ],
+              "location": "StudentStepDefs.the_status_code_should_be(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 199704,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "the response matches the student",
+            "match": {
+              "location": "StudentStepDefs.The_response_matches_the_student()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 51,
+        "name": "Adding a student should increase the student number.",
+        "description": "",
+        "id": "students;adding-a-student-should-increase-the-student-number.",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1002601,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "I create a student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.a_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "enrolled",
+                  "true"
+                ],
+                "line": 53
+              },
+              {
+                "cells": [
+                  "number",
+                  "1"
+                ],
+                "line": 54
+              },
+              {
+                "cells": [
+                  "classes",
+                  "math, history, science"
+                ],
+                "line": 55
+              },
+              {
+                "cells": [
+                  "name",
+                  "Andrew Samii"
+                ],
+                "line": 56
+              },
+              {
+                "cells": [
+                  "dob",
+                  "07/11/1989"
+                ],
+                "line": 57
+              },
+              {
+                "cells": [
+                  "addressLine1",
+                  "1 Street Pl."
+                ],
+                "line": 58
+              },
+              {
+                "cells": [
+                  "city",
+                  "San Diego"
+                ],
+                "line": 59
+              },
+              {
+                "cells": [
+                  "state",
+                  "CA"
+                ],
+                "line": 60
+              },
+              {
+                "cells": [
+                  "zip",
+                  "92131"
+                ],
+                "line": 61
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "5551234567"
+                ],
+                "line": 62
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 19647655,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 14152061,
+              "status": "passed"
+            },
+            "line": 64,
+            "name": "I get the student",
+            "match": {
+              "location": "StudentStepDefs.I_get_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 74900,
+              "status": "passed"
+            },
+            "line": 65,
+            "name": "I store the last response as temp",
+            "match": {
+              "arguments": [
+                {
+                  "val": "temp",
+                  "offset": 29
+                }
+              ],
+              "location": "StudentStepDefs.I_store_the_last_response(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 379205,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "I create a student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.a_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "enrolled",
+                  "true"
+                ],
+                "line": 67
+              },
+              {
+                "cells": [
+                  "number",
+                  "1"
+                ],
+                "line": 68
+              },
+              {
+                "cells": [
+                  "classes",
+                  "math, history, science"
+                ],
+                "line": 69
+              },
+              {
+                "cells": [
+                  "name",
+                  "Andrew Samii"
+                ],
+                "line": 70
+              },
+              {
+                "cells": [
+                  "dob",
+                  "07/11/1989"
+                ],
+                "line": 71
+              },
+              {
+                "cells": [
+                  "addressLine1",
+                  "1 Street Pl."
+                ],
+                "line": 72
+              },
+              {
+                "cells": [
+                  "city",
+                  "San Diego"
+                ],
+                "line": 73
+              },
+              {
+                "cells": [
+                  "state",
+                  "CA"
+                ],
+                "line": 74
+              },
+              {
+                "cells": [
+                  "zip",
+                  "92131"
+                ],
+                "line": 75
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "5551234567"
+                ],
+                "line": 76
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 36534957,
+              "status": "passed"
+            },
+            "line": 77,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9851711,
+              "status": "passed"
+            },
+            "line": 78,
+            "name": "I get the student",
+            "match": {
+              "location": "StudentStepDefs.I_get_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 78961,
+              "status": "passed"
+            },
+            "line": 79,
+            "name": "the status code should be 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 26
+                }
+              ],
+              "location": "StudentStepDefs.the_status_code_should_be(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 152383,
+              "status": "passed"
+            },
+            "line": 80,
+            "name": "the last response should have a number one higher than the one in temp",
+            "match": {
+              "arguments": [
+                {
+                  "val": "temp",
+                  "offset": 66
+                }
+              ],
+              "location": "StudentStepDefs.higerNumber(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 69664,
+              "status": "passed"
+            },
+            "line": 81,
+            "name": "the student number should be seven characters long",
+            "match": {
+              "location": "StudentStepDefs.student_number_seven_characters()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 83,
+        "name": "Adding an enrolled student with fewer than three classes throws an error",
+        "description": "",
+        "id": "students;adding-an-enrolled-student-with-fewer-than-three-classes-throws-an-error",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 390060,
+              "status": "passed"
+            },
+            "line": 84,
+            "name": "I create a student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.a_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "enrolled",
+                  "true"
+                ],
+                "line": 85
+              },
+              {
+                "cells": [
+                  "number",
+                  "1"
+                ],
+                "line": 86
+              },
+              {
+                "cells": [
+                  "classes",
+                  "math, history"
+                ],
+                "line": 87
+              },
+              {
+                "cells": [
+                  "name",
+                  "Andrew Samii"
+                ],
+                "line": 88
+              },
+              {
+                "cells": [
+                  "dob",
+                  "07/11/1989"
+                ],
+                "line": 89
+              },
+              {
+                "cells": [
+                  "addressLine1",
+                  "1 Street Pl."
+                ],
+                "line": 90
+              },
+              {
+                "cells": [
+                  "city",
+                  "San Diego"
+                ],
+                "line": 91
+              },
+              {
+                "cells": [
+                  "state",
+                  "CA"
+                ],
+                "line": 92
+              },
+              {
+                "cells": [
+                  "zip",
+                  "92131"
+                ],
+                "line": 93
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "5551234567"
+                ],
+                "line": 94
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 17753092,
+              "status": "passed"
+            },
+            "line": 95,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 251872,
+              "status": "passed"
+            },
+            "line": 96,
+            "name": "the status code should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 26
+                }
+              ],
+              "location": "StudentStepDefs.the_status_code_should_be(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 98,
+        "name": "Adding an unenrolled student with any classes throws an error",
+        "description": "",
+        "id": "students;adding-an-unenrolled-student-with-any-classes-throws-an-error",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 647884,
+              "status": "passed"
+            },
+            "line": 99,
+            "name": "I create a student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.a_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "enrolled",
+                  "false"
+                ],
+                "line": 100
+              },
+              {
+                "cells": [
+                  "number",
+                  "1"
+                ],
+                "line": 101
+              },
+              {
+                "cells": [
+                  "classes",
+                  "math, history, science"
+                ],
+                "line": 102
+              },
+              {
+                "cells": [
+                  "name",
+                  "Andrew Samii"
+                ],
+                "line": 103
+              },
+              {
+                "cells": [
+                  "dob",
+                  "07/11/1989"
+                ],
+                "line": 104
+              },
+              {
+                "cells": [
+                  "addressLine1",
+                  "1 Street Pl."
+                ],
+                "line": 105
+              },
+              {
+                "cells": [
+                  "city",
+                  "San Diego"
+                ],
+                "line": 106
+              },
+              {
+                "cells": [
+                  "state",
+                  "CA"
+                ],
+                "line": 107
+              },
+              {
+                "cells": [
+                  "zip",
+                  "92131"
+                ],
+                "line": 108
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "5551234567"
+                ],
+                "line": 109
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 21136477,
+              "status": "passed"
+            },
+            "line": 110,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 84687,
+              "status": "passed"
+            },
+            "line": 111,
+            "name": "the status code should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 26
+                }
+              ],
+              "location": "StudentStepDefs.the_status_code_should_be(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 113,
+        "name": "Updating a student should update the database",
+        "description": "",
+        "id": "students;updating-a-student-should-update-the-database",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 407091,
+              "status": "passed"
+            },
+            "line": 114,
+            "name": "I create a student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.a_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "enrolled",
+                  "true"
+                ],
+                "line": 115
+              },
+              {
+                "cells": [
+                  "number",
+                  "1"
+                ],
+                "line": 116
+              },
+              {
+                "cells": [
+                  "classes",
+                  "math, history, science"
+                ],
+                "line": 117
+              },
+              {
+                "cells": [
+                  "name",
+                  "Andrew Samii"
+                ],
+                "line": 118
+              },
+              {
+                "cells": [
+                  "dob",
+                  "07/11/1989"
+                ],
+                "line": 119
+              },
+              {
+                "cells": [
+                  "addressLine1",
+                  "1 Street Pl."
+                ],
+                "line": 120
+              },
+              {
+                "cells": [
+                  "city",
+                  "San Diego"
+                ],
+                "line": 121
+              },
+              {
+                "cells": [
+                  "state",
+                  "CA"
+                ],
+                "line": 122
+              },
+              {
+                "cells": [
+                  "zip",
+                  "92131"
+                ],
+                "line": 123
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "5551234567"
+                ],
+                "line": 124
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 20779586,
+              "status": "passed"
+            },
+            "line": 125,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 219658,
+              "status": "passed"
+            },
+            "line": 126,
+            "name": "I update the student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.update_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "Kian Samii"
+                ],
+                "line": 127
+              },
+              {
+                "cells": [
+                  "city",
+                  "Santa Cruz"
+                ],
+                "line": 128
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16995847,
+              "status": "passed"
+            },
+            "line": 129,
+            "name": "I get the student",
+            "match": {
+              "location": "StudentStepDefs.I_get_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 58895,
+              "status": "passed"
+            },
+            "line": 130,
+            "name": "the response does not match the student",
+            "match": {
+              "location": "StudentStepDefs.the_response_does_not_match_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20833888,
+              "status": "passed"
+            },
+            "line": 131,
+            "name": "I update the student on the server",
+            "match": {
+              "location": "StudentStepDefs.I_update_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 18054400,
+              "status": "passed"
+            },
+            "line": 132,
+            "name": "I get the student",
+            "match": {
+              "location": "StudentStepDefs.I_get_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 106276,
+              "status": "passed"
+            },
+            "line": 133,
+            "name": "the response matches the student",
+            "match": {
+              "location": "StudentStepDefs.The_response_matches_the_student()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 135,
+        "name": "Updating the student number does not change the number in the database",
+        "description": "",
+        "id": "students;updating-the-student-number-does-not-change-the-number-in-the-database",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 393928,
+              "status": "passed"
+            },
+            "line": 136,
+            "name": "I create a student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.a_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "enrolled",
+                  "true"
+                ],
+                "line": 137
+              },
+              {
+                "cells": [
+                  "number",
+                  "1"
+                ],
+                "line": 138
+              },
+              {
+                "cells": [
+                  "classes",
+                  "math, history, science"
+                ],
+                "line": 139
+              },
+              {
+                "cells": [
+                  "name",
+                  "Andrew Samii"
+                ],
+                "line": 140
+              },
+              {
+                "cells": [
+                  "dob",
+                  "07/11/1989"
+                ],
+                "line": 141
+              },
+              {
+                "cells": [
+                  "addressLine1",
+                  "1 Street Pl."
+                ],
+                "line": 142
+              },
+              {
+                "cells": [
+                  "city",
+                  "San Diego"
+                ],
+                "line": 143
+              },
+              {
+                "cells": [
+                  "state",
+                  "CA"
+                ],
+                "line": 144
+              },
+              {
+                "cells": [
+                  "zip",
+                  "92131"
+                ],
+                "line": 145
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "5551234567"
+                ],
+                "line": 146
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 24740940,
+              "status": "passed"
+            },
+            "line": 147,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 138725,
+              "status": "passed"
+            },
+            "line": 148,
+            "name": "I update the student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.update_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "number",
+                  "2"
+                ],
+                "line": 149
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13800465,
+              "status": "passed"
+            },
+            "line": 150,
+            "name": "I get the student",
+            "match": {
+              "location": "StudentStepDefs.I_get_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 217153,
+              "status": "passed"
+            },
+            "line": 151,
+            "name": "I store the last response as temp",
+            "match": {
+              "arguments": [
+                {
+                  "val": "temp",
+                  "offset": 29
+                }
+              ],
+              "location": "StudentStepDefs.I_store_the_last_response(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17795384,
+              "status": "passed"
+            },
+            "line": 152,
+            "name": "I update the student on the server",
+            "match": {
+              "location": "StudentStepDefs.I_update_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 14538453,
+              "status": "passed"
+            },
+            "line": 153,
+            "name": "I get the student",
+            "match": {
+              "location": "StudentStepDefs.I_get_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 126806,
+              "status": "passed"
+            },
+            "line": 154,
+            "name": "the last response should have a number the same as the one in temp",
+            "match": {
+              "arguments": [
+                {
+                  "val": "temp",
+                  "offset": 62
+                }
+              ],
+              "location": "StudentStepDefs.equalNumber(String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 157,
+        "name": "Deleting the student removes the row from the database",
+        "description": "",
+        "id": "students;deleting-the-student-removes-the-row-from-the-database",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 346766,
+              "status": "passed"
+            },
+            "line": 158,
+            "name": "I create a student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.a_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "enrolled",
+                  "true"
+                ],
+                "line": 159
+              },
+              {
+                "cells": [
+                  "number",
+                  "1"
+                ],
+                "line": 160
+              },
+              {
+                "cells": [
+                  "classes",
+                  "math, history, science"
+                ],
+                "line": 161
+              },
+              {
+                "cells": [
+                  "name",
+                  "Andrew Samii"
+                ],
+                "line": 162
+              },
+              {
+                "cells": [
+                  "dob",
+                  "07/11/1989"
+                ],
+                "line": 163
+              },
+              {
+                "cells": [
+                  "addressLine1",
+                  "1 Street Pl."
+                ],
+                "line": 164
+              },
+              {
+                "cells": [
+                  "city",
+                  "San Diego"
+                ],
+                "line": 165
+              },
+              {
+                "cells": [
+                  "state",
+                  "CA"
+                ],
+                "line": 166
+              },
+              {
+                "cells": [
+                  "zip",
+                  "92131"
+                ],
+                "line": 167
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "5551234567"
+                ],
+                "line": 168
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 13518211,
+              "status": "passed"
+            },
+            "line": 169,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13060227,
+              "status": "passed"
+            },
+            "line": 170,
+            "name": "I get the student",
+            "match": {
+              "location": "StudentStepDefs.I_get_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 125651,
+              "status": "passed"
+            },
+            "line": 171,
+            "name": "the response matches the student",
+            "match": {
+              "location": "StudentStepDefs.The_response_matches_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16451522,
+              "status": "passed"
+            },
+            "line": 172,
+            "name": "I delete the student",
+            "match": {
+              "location": "StudentStepDefs.I_delete_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 225777,
+              "status": "passed"
+            },
+            "line": 173,
+            "name": "the status code should be 204",
+            "match": {
+              "arguments": [
+                {
+                  "val": "204",
+                  "offset": 26
+                }
+              ],
+              "location": "StudentStepDefs.the_status_code_should_be(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15282577,
+              "status": "passed"
+            },
+            "line": 174,
+            "name": "I get the student",
+            "match": {
+              "location": "StudentStepDefs.I_get_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 63866,
+              "status": "passed"
+            },
+            "line": 175,
+            "name": "the status code should be 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 26
+                }
+              ],
+              "location": "StudentStepDefs.the_status_code_should_be(int)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 178,
+        "name": "Not supplying the name does not allow you to add a student",
+        "description": "",
+        "id": "students;not-supplying-the-name-does-not-allow-you-to-add-a-student",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 380140,
+              "status": "passed"
+            },
+            "line": 179,
+            "name": "I create a student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.a_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "enrolled",
+                  "true"
+                ],
+                "line": 180
+              },
+              {
+                "cells": [
+                  "number",
+                  "1"
+                ],
+                "line": 181
+              },
+              {
+                "cells": [
+                  "classes",
+                  "math, history, science"
+                ],
+                "line": 182
+              },
+              {
+                "cells": [
+                  "dob",
+                  "07/11/1989"
+                ],
+                "line": 183
+              },
+              {
+                "cells": [
+                  "addressLine1",
+                  "1 Street Pl."
+                ],
+                "line": 184
+              },
+              {
+                "cells": [
+                  "city",
+                  "San Diego"
+                ],
+                "line": 185
+              },
+              {
+                "cells": [
+                  "state",
+                  "CA"
+                ],
+                "line": 186
+              },
+              {
+                "cells": [
+                  "zip",
+                  "92131"
+                ],
+                "line": 187
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "5551234567"
+                ],
+                "line": 188
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 24882912,
+              "status": "passed"
+            },
+            "line": 189,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 188499,
+              "status": "passed"
+            },
+            "line": 190,
+            "name": "the status code should be 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 26
+                }
+              ],
+              "location": "StudentStepDefs.the_status_code_should_be(int)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 192,
+        "name": "Supplying a future date does not allow you to add a student",
+        "description": "",
+        "id": "students;supplying-a-future-date-does-not-allow-you-to-add-a-student",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 550521,
+              "status": "passed"
+            },
+            "line": 193,
+            "name": "I create a student with parameters:",
+            "match": {
+              "location": "StudentStepDefs.a_student_with_parameters(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "enrolled",
+                  "true"
+                ],
+                "line": 194
+              },
+              {
+                "cells": [
+                  "number",
+                  "1"
+                ],
+                "line": 195
+              },
+              {
+                "cells": [
+                  "classes",
+                  "math, history, science"
+                ],
+                "line": 196
+              },
+              {
+                "cells": [
+                  "name",
+                  "Andrew Samii"
+                ],
+                "line": 197
+              },
+              {
+                "cells": [
+                  "dob",
+                  "07/11/2017"
+                ],
+                "line": 198
+              },
+              {
+                "cells": [
+                  "addressLine1",
+                  "1 Street Pl."
+                ],
+                "line": 199
+              },
+              {
+                "cells": [
+                  "city",
+                  "San Diego"
+                ],
+                "line": 200
+              },
+              {
+                "cells": [
+                  "state",
+                  "CA"
+                ],
+                "line": 201
+              },
+              {
+                "cells": [
+                  "zip",
+                  "92131"
+                ],
+                "line": 202
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "5551234567"
+                ],
+                "line": 203
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 28231203,
+              "status": "passed"
+            },
+            "line": 204,
+            "name": "I add the student",
+            "match": {
+              "location": "StudentStepDefs.I_add_the_student()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Students",
+    "description": "",
+    "id": "students",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/students.feature"
+  }
+]
