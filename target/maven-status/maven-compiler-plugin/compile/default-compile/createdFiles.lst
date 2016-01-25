@@ -1,6 +1,0 @@
-com/intuit/rest/controller/StudentController.class
-com/intuit/core/repository/StudentRepository.class
-com/intuit/common/exception/StudentServicesException.class
-com/intuit/rest/domain/Student.class
-com/intuit/core/IStudentRepository.class
-com/intuit/common/exception/ErrorCode.class
