@@ -47,10 +47,10 @@ Notes
     the product owner. As there are many ways to validate phonenumbers, I have decided to go with allowing characters 
     shown in the example (a dash), spaces and the plus sign (+).
     
-4. The odd request of using specifically a v4 uuid is odd. Generally, the client should not impose its will on the location
-    of an object. After creating the object, a Location header should be sent back (and in this case, a v4 UUID would make
-    sense as a requirement). The Location header is currently sent back but the id section is required to be not null.
-    With minor changes in the app, this can be easily changed to autogenerating the UUID.
+4. The requirement of using specifically a v4 uuid as part of the request uuid is odd. Generally, the client should not 
+	impose its will on the location of an object. After creating the object, a Location header should be sent back 
+	(and in this case, a v4 UUID would make sense as a requirement). The Location header is currently sent back but the 
+	id section is required to be not null. With minor changes in the app, this can be easily changed to autogenerating the UUID.
     
     
 Testing
