@@ -68,7 +68,8 @@ Testing
     `mvn cobertura:cobertura  `
     However, due to what seems like an error with Java 8 and Cobertura, cobertura outside the maven plugin is unable to
     instrument any classes - i.e.(on my local machine)   
-    `~/Downloads/cobertura-2.1.1/cobertura-instrument.sh ~/Google\ Drive/Students/target/Students-1.0-SNAPSHOT/WEB-INF/`
+    `~/Downloads/cobertura-2.1.1/cobertura-instrument.sh  `
+    `~/Google\ Drive/Students/target/Students-1.0-SNAPSHOT/WEB-INF/`
     outputs:  
     `[INFO] Cobertura: Loaded information on 0 classes.  
      [INFO] Cobertura: Saved information on 0 classes.  
