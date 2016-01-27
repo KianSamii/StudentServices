@@ -71,7 +71,7 @@ Testing
     `~/Downloads/cobertura-2.1.1/cobertura-instrument.sh  `
     `~/Google\ Drive/Students/target/Students-1.0-SNAPSHOT/WEB-INF/`
     outputs:  
-    `[INFO] Cobertura: Loaded information on 0 classes.  
+    `[INFO] Cobertura: Loaded information on 0 classes.
      [INFO] Cobertura: Saved information on 0 classes.  
      [INFO] Cobertura: Saved information on 0 classes.`
      
