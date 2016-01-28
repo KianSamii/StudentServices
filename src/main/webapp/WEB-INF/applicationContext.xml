@@ -19,6 +19,7 @@
         <mvc:message-converters register-defaults="true">
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
             <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <ref bean="xmlMarshaller"/>
         </mvc:message-converters>
     </mvc:annotation-driven>
 
@@ -28,10 +29,18 @@
         <property name="favorPathExtension" value="true"/>
         <property name="mediaTypes">
             <value>
+                html=text/html
                 json=application/json
-                xhtml=application/xhtml+xml
+                xml=application/xml
             </value>
         </property>
         <property name="defaultContentType" value="application/json"/>
+        <property name="ignoreUnknownPathExtensions" value="true" />
     </bean>
+
+    <bean id="xmlMarshaller" class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
+        <constructor-arg ref="xStreamMarshaller"/>
+    </bean>
+    <bean id="xStreamMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller"/>
+
 </beans>

@@ -39,12 +39,27 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.6.4</version>
         </dependency>
+
+        <!-- XML Marshalling -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <version>3.0.6.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.8</version>
+        </dependency>
+
+
+
+        <!-- sqlite -->
         <dependency>
             <groupId>com.almworks.sqlite4java</groupId>
             <artifactId>sqlite4java</artifactId>
             <version>0.282</version>
         </dependency>
-        <!-- sqlite -->
 
 
         <!-- Commons -->
