@@ -9,6 +9,6 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = { "pretty", "junit:target/cucumber.xml", "json:target/cucumber.json" },
-		tags = {}, features = "src/test/resources/features/students.feature", glue = { "com.intuit.integration" })
+		tags = {}, features = "src/test/resources/features/students.feature", glue = { "integration" })
 public class RunCukes {
 }
