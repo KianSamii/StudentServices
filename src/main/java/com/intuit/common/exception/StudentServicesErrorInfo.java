@@ -1,29 +1,38 @@
 package com.intuit.common.exception;
 
+import org.springframework.validation.FieldError;
+
+import java.util.List;
+
 /**
- * @author ksamii
- * @since 1/20/16.
+ * Created by kian on 1/22/16.
  */
 public class StudentServicesErrorInfo {
-	private String id;
 	private int code;
-	private String details;
+	private String message;
+	private List<FieldError> fieldErrors;
 
-	public StudentServicesErrorInfo(ErrorCode error) {
-		this.id = error.name();
-		this.code = error.getErrorCode();
-		this.details = error.getMessage();
+	public StudentServicesErrorInfo(ErrorCode errorCode, List<FieldError> fieldErrors) {
+		this.code = errorCode.getErrorCode();
+		this.message = errorCode.getMessage();
+		this.fieldErrors = fieldErrors;
 	}
 
-	public String getId() {
-		return id;
+
+	public StudentServicesErrorInfo(ErrorCode errorCode) {
+		this(errorCode, null);
 	}
 
 	public int getCode() {
 		return code;
 	}
 
-	public String getDetails() {
-		return details;
+	public String getMessage() {
+		return message;
 	}
+
+	public List<FieldError> getFieldErrors() {
+		return fieldErrors;
+	}
+
 }

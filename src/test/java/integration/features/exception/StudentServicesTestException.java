@@ -8,6 +8,10 @@ import org.springframework.http.HttpStatus;
 public class StudentServicesTestException extends RuntimeException {
 	private HttpStatus status;
 
+	public StudentServicesTestException(HttpStatus status) {
+		this.status = status;
+	}
+
 	public HttpStatus getStatus() {
 		return status;
 	}

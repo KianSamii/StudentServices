@@ -173,7 +173,7 @@ Feature: Students
     And the status code should be 204
     And I get the student
     And the status code should be 404
-        
+
 
     Scenario: Not supplying the name does not allow you to add a student
       Given I create a student with parameters:
@@ -212,7 +212,7 @@ Feature: Students
       | id           | BAD_UUID               |
       | classes      | math, history, science |
       | name         | Andrew Samii           |
-      | dob          | 07/11/2017             |
+      | dob          | 07/11/1989             |
       | addressLine1 | 1 Street Pl.           |
       | city         | San Diego              |
       | state        | CA                     |
