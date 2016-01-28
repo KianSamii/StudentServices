@@ -64,16 +64,16 @@ Testing
     it a unit test is incorrect, as it calls the db and reads from it (actually using its own class to do so). At best,
     this would be an integration test.
     
-3. Code coverage for unit tests can be provided either by the IDE's built in functions or by cobertura by running  
-    `mvn cobertura:cobertura  `
+3. Code coverage for unit tests can be provided either by the IDE's built in functions or by cobertura by running
+    `mvn cobertura:cobertura` or included in the build cycle with `mvn clean package`
     However, due to what seems like an error with Java 8 and Cobertura, cobertura outside the maven plugin is unable to
     instrument any classes - i.e.(on my local machine)   
     `~/Downloads/cobertura-2.1.1/cobertura-instrument.sh  `
-    `~/Google\ Drive/Students/target/Students-1.0-SNAPSHOT/WEB-INF/`
+    `~/Google\ Drive/Students/target/Students-1.0-SNAPSHOT/WEB-INF/`  
     outputs:  
-    `[INFO] Cobertura: Loaded information on 0 classes.
-     [INFO] Cobertura: Saved information on 0 classes.  
-     [INFO] Cobertura: Saved information on 0 classes.`
+    `[INFO] Cobertura: Loaded information on 0 classes.`  
+     `[INFO] Cobertura: Saved information on 0 classes.`  
+     `[INFO] Cobertura: Saved information on 0 classes.`  
      
      which appears to be a mismatch in one of its JARs and java8, according to stack overflow.
      
