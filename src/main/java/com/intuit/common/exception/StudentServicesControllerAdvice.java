@@ -46,6 +46,7 @@ public class StudentServicesControllerAdvice {
 			case STUDENT_NOT_ENROLLED_HAS_CLASSES:
 			case DATABASE_ID_NOT_UNIQUE:
 			case SYNTAX_ERROR:
+			case ID_NOT_MATCHING_UUID4_PATTERN:
 				logger.info(e.getErrorCode().getMessage(), e);
 				return new ResponseEntity<>(new StudentServicesErrorInfo(e.getErrorCode()), HttpStatus.BAD_REQUEST);
 
